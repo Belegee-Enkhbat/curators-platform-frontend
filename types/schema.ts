@@ -1,133 +1,53 @@
-import type { UserRole, JobStatus, Platform, AgeGroup } from './enums.ts';
-import type { ApplicationStatus } from './enums.ts';
-
-export type { ApplicationStatus };
-
-// User and authentication types
+import { UserType } from "./enums";
 export interface User {
   id: string;
-  email: string;
   name: string;
-  role: UserRole;
-  avatar?: string;
-  createdAt: Date;
-}
-
-export interface ContentCreator extends User {
-  role: 'creator';
-  bio?: string;
-  location?: string;
-  skills: string[];
-  portfolio: string[];
-  socialAccounts: SocialAccount[];
-  analytics: SocialAnalytics;
-  targetAudience: AudienceData;
-}
-
-export interface Organization extends User {
-  role: 'organization';
-  companyName: string;
-  industry?: string;
-  website?: string;
-  description?: string;
-}
-
-export interface SocialAccount {
-  platform: Platform;
-  username: string;
-  followers: number;
+  type: UserType;
   verified: boolean;
-}
-
-export interface SocialAnalytics {
-  totalFollowers: number;
-  engagementRate: number;
-  averageReach: number;
-  topPlatform: Platform;
-}
-
-export interface AudienceData {
-  ageGroups: Record<AgeGroup, number>;
-  topLocations: string[];
-  interests: string[];
-}
-
-// Job types
-export interface Job {
-  id: string;
-  organizationId: string;
-  organizationName: string;
-  title: string;
-  description: string;
-  budget: {
-    min: number;
-    max: number;
+  rating: number;
+  social: {
+    twitter: string;
+    youtube: string;
+    followers: number;
+    engagement: number;
   };
-  deadline: Date;
-  requiredSkills: string[];
-  status: JobStatus;
-  createdAt: Date;
-  applicationsCount: number;
 }
 
 export interface Application {
   id: string;
   jobId: string;
-  jobTitle: string;
   creatorId: string;
-  creatorName: string;
-  creatorAvatar?: string;
-  coverLetter: string;
-  proposedBudget: number;
-  status: ApplicationStatus;
-  appliedAt: Date;
+  status: "pending" | "accepted" | "rejected";
+  appliedAt: string;
 }
 
-// Props types
-export interface AuthFormProps {
-  role: UserRole;
-  onSubmit: (data: LoginData | RegisterData) => void;
-  isLoading?: boolean;
+export interface Company {
+id: string;
+name: string;
+logoUrl: string;
+location: string;
 }
 
-export interface LoginData {
-  email: string;
-  password: string;
-  rememberMe?: boolean;
+export interface Job {
+  id: string;                  // Ажлын ID
+  title: string;               // Ажлын нэр
+  description: string;         // Ажлын дэлгэрэнгүй тайлбар
+  requirements: string[];      // Ажлын шаардлагууд
+  location: string;            // Ажлын байршил
+  jobType: string;             // Ажлын төрөл (Гэрээт, Бүтэн цагаар гэх мэт)
+  salaryMin: string;           // Доод цалин
+  salaryMax: string;           // Дээд цалин
+  companyId: string;           // Компаний ID
+  applicants: number;          // Өргөдөл гаргасан хүний тоо
+  postedAgo: string;           // Хэзээ байршуулсан тухай текст
+  tags: string[];              // Тэмдэглэгээ / Category / статус
 }
 
-export interface RegisterData {
-  email: string;
-  password: string;
-  name: string;
-  role: UserRole;
-  companyName?: string;
+
+export interface FilterSection {
+id: string;
+label: string;
+options: string[];
+type?: 'button' | 'tag';
 }
 
-export interface JobFormProps {
-  onSubmit: (data: JobFormData) => void;
-  isLoading?: boolean;
-  initialData?: Partial<JobFormData>;
-}
-
-export interface JobFormData {
-  title: string;
-  description: string;
-  budgetMin: number;
-  budgetMax: number;
-  deadline: Date;
-  requiredSkills: string[];
-}
-
-export interface DashboardStatsProps {
-  stats: DashboardStats;
-}
-
-export interface DashboardStats {
-  totalJobs?: number;
-  activeJobs?: number;
-  totalApplications?: number;
-  pendingApplications?: number;
-  totalFollowers?: number;
-  engagementRate?: number;
-}
