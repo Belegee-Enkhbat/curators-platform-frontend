@@ -121,22 +121,55 @@ export const MOCK_JOBS: Job[] = [
 ];
 
 
-export const MOCK_FILTERS: FilterSection[] = [
+// @/data/mockData.ts (MOCK_FILTERS-г шинэчлэх)
+export const MOCK_FILTERS = [
   {
-    id: "level",
-    label: "Түвшин",
-    options: ["Дээд шатны", "Гүйцэтгэх/Удирдагч", "Дунд шатны", "Шинэ ажилтан"],
-    type: "button",
+    id: 'f1',
+    label: 'Мэргэжил / Үүрэг',
+    type: 'tag',
+    options: [
+      'Контент Зохиогч',
+      'Видео Монтаж',
+      'График Дизайн',
+      'Сошиал Медиа Менежер',
+      'Копирайтер',
+    ],
   },
   {
-    id: "profession",
-    label: "Мэргэжил",
-    options: ["Менежмент", "Нягтлан, Санхүү", "Боловсрол", "Бүтээгдэхүүн"],
-    type: "tag",
+    id: 'f2',
+    label: 'Контентын Төрөл',
+    type: 'list',
+    options: [
+      'Богино Видео (Reels/TikTok)',
+      'Урт Видео (YouTube)',
+      'Нийтлэл/Блог',
+      'Сошиал Постууд',
+      'Зурагт Хөрөг/Инфографик',
+    ],
+  },
+  {
+    id: 'f3',
+    label: 'Байршил',
+    type: 'tag',
+    options: [
+      'Ажлаас гадуур (Remote)',
+      'Оффист (Улаанбаатар)',
+      'Хосолсон',
+    ],
+  },
+  {
+    id: 'f4',
+    label: 'Шаардлагатай Хэрэгсэл',
+    type: 'tag',
+    options: [
+      'Adobe Premiere Pro',
+      'Final Cut Pro',
+      'Adobe Photoshop/Illustrator',
+      'SEO мэдлэг',
+      'CapCut',
+    ],
   },
 ];
-
-
 export const users = [
   {
     id: 'u1',
