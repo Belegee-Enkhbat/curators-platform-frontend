@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
     const router = useRouter();
-    const [type, setType] = useState<UserType>(UserType.Organization);
+    const [type, setType] = useState<UserType>(UserType.Creator);
     const [name, setName] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -19,7 +19,7 @@ export default function LoginPage() {
     // Redirect logic: If already logged in, redirect to the appropriate page
     useEffect(() => {
         if (user) {
-            const redirectPath = user.type === UserType.Organization ? '/organization' : '/job-list';
+            const redirectPath = user.type === UserType.Organization ? '/org-dashboard' : '/job-list';
             // Use router.replace to prevent going back to login page after successful login
             router.replace(redirectPath); 
         }
@@ -47,7 +47,7 @@ export default function LoginPage() {
     };
     
     // Determine redirect path for display hint
-    const successRedirectPath = type === UserType.Organization ? '/organization' : '/job-list';
+    const successRedirectPath = type === UserType.Organization ? '/org-dashboard' : '/job-list';
 
     return (
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
@@ -61,19 +61,19 @@ export default function LoginPage() {
                 <div className="flex space-x-2 p-1 bg-gray-100 rounded-lg">
                     <Button
                         type="button"
-                        variant={type === UserType.Organization ? 'default' : 'ghost'}
-                        onClick={() => setType(UserType.Organization)}
-                        className="flex-1 transition-all duration-200 h-10 shadow-sm"
-                    >
-                        Байгууллага
-                    </Button>
-                    <Button
-                        type="button"
                         variant={type === UserType.Creator ? 'default' : 'ghost'}
                         onClick={() => setType(UserType.Creator)}
                         className="flex-1 transition-all duration-200 h-10 shadow-sm"
                     >
                         Контент Бүтээгч
+                    </Button>
+                    <Button
+                        type="button"
+                        variant={type === UserType.Organization ? 'default' : 'ghost'}
+                        onClick={() => setType(UserType.Organization)}
+                        className="flex-1 transition-all duration-200 h-10 shadow-sm"
+                    >
+                        Байгууллага
                     </Button>
                 </div>
 

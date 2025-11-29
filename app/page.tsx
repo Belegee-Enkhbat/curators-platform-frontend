@@ -13,7 +13,7 @@ export default function Home() {
         // user state нь localStorage-аас уншигдаж дуусах хүртэл хүлээх
         if (user) {
             // Нэвтэрсэн бол хэрэглэгчийн төрлөөр нь шууд шилжүүлэх
-            const redirectPath = user.type === UserType.Organization ? '/organization' : '/job-list';
+            const redirectPath = user.type === UserType.Organization ? '/org-dashboard' : '/job-list';
             router.replace(redirectPath);
         }
     }, [user, router]);
@@ -41,7 +41,7 @@ export default function Home() {
                     onClick={() => router.push('/login')}
                     className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-8 py-3 rounded-xl shadow-lg transition transform hover:scale-105"
                 >
-                    Түүхий өгөгдөл үзүүлэх
+                    Эхлэх
                 </Button>
             </div>
         </div>

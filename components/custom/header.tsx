@@ -42,7 +42,11 @@ const Header = () => {
     const handleLoginClick = () => {
         router.push('/login');
     };
-    
+
+    const handleLogout = () => {
+        logout(); // Call the logout function from the auth store
+        handleLoginClick(); // Redirect to login page after logout
+    }
 
 
     return (
@@ -62,12 +66,14 @@ const Header = () => {
                         {
                             user?.type === 'organization' ? (
                                 <>
-                                    <NavLink href="/organization">Дашбоард</NavLink>
+                                    <NavLink href="/org-dashboard">Дашбоард</NavLink>
+                                    <NavLink href="/active-creator">Идэвхтэй контент бүтээгч</NavLink>
                                     <NavLink href="/trending">Трэнп контентууд</NavLink>
                                     <NavLink href="/ai-assistant">АI туслах</NavLink>
                                 </>
                             ) : user?.type === 'creator' ? (
                                 <>
+                                    <NavLink href="/user-dashboard">Дашбоард</NavLink>
                                     <NavLink href="/job-list">Ажлын зар</NavLink>
                                     <NavLink href="/trending">Трэнп контентууд</NavLink>
                                     <NavLink href="/career-advice">Карьер зөвлөгөө</NavLink>
@@ -88,7 +94,7 @@ const Header = () => {
                                     Сайн байна уу, {user.name}!
                                 </span>
                                 <Button
-                                    onClick={logout} // Call the logout function (mocked)
+                                    onClick={handleLogout} // Call the logout function (mocked)
                                     variant="outline"
                                     className="hidden sm:inline-flex text-sm font-semibold h-9 px-4 border-red-400 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors group"
                                 >

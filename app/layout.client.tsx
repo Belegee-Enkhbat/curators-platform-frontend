@@ -11,8 +11,8 @@ interface ClientLayoutProps {
 }
 
 // Хамгаалагдсан хуудсууд (Authentication шаардлагатай)
-// Таны төслийн бүтцээр: /organization болон /job-list
-const PROTECTED_ROUTES = ['/organization', '/job-list'];
+// Таны төслийн бүтцээр: /org-dashboard болон /job-list
+const PROTECTED_ROUTES = ['/org-dashboard', '/job-list'];
 
 export default function ClientLayout({ children }: ClientLayoutProps) {
     // React Query Setup: Initialize QueryClient once
@@ -47,7 +47,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         } else if (user && pathname === '/login') {
              // 2. Хэрэглэгч нэвтэрсэн бөгөөд /login хуудас руу орохыг оролдож байна
              // user.type is a string from the store (e.g., 'Organization' or 'Creator')
-             const redirectPath = user.type === UserType.Organization ? '/organization' : '/job-list';
+             const redirectPath = user.type === UserType.Organization ? '/org-dashboard' : '/job-list';
              console.log(`Already logged in: Redirecting from /login to ${redirectPath}`);
              router.replace(redirectPath);
         }
