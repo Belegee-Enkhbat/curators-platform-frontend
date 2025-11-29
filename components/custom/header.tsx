@@ -1,50 +1,71 @@
 "use client";
+import React, { useState, useEffect } from 'react';
+import { Menu, Globe, LogOut, LogIn } from 'lucide-react';
+import { Button } from '../ui/button';
+import { useAuthStore } from '@/store/authStore';
 
-import { Button } from "@/components/ui/button";
-import { Menu, Globe } from "lucide-react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { useAuthStore } from "@/store/authStore";
+// This mock replaces 'next/link'
+// Note: Changed type definition to avoid TS errors in the mock environment
+type NavLinkProps = {
+    href: string;
+    children: React.ReactNode;
+    className?: string;
+};
 
-// NavLink компонентыг Header компонентын ГАДНА зарлаж байна.
-const NavLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
-    <Link
+const NavLink: React.FC<NavLinkProps> = ({ href, children, className }) => (
+    <a
         href={href}
-        className="text-sm font-medium text-gray-600 hover:text-indigo-700 transition-colors"
+        // Simulating Next.js Link behavior with anchor tag for demonstration
+        onClick={(e) => { e.preventDefault(); console.log(`Navigating to ${href}`); }}
+        className={className ?? "text-sm font-medium text-gray-600 hover:text-indigo-700 transition-colors cursor-pointer"}
     >
         {children}
-    </Link>
+    </a>
 );
+
+// This mock replaces 'next/navigation' useRouter
+const useRouter = () => ({
+    push: (path: string) => {
+        // Simulating Next.js router push
+        console.log(`Routing to: ${path}`);
+        alert(`Simulating route push to: ${path}. Check console for details.`);
+    }
+});
+
+// This mock replaces '@/store/authStore'
 
 
 const Header = () => {
-    const { user } = useAuthStore();
-    const isAuthChecked = user !== undefined;
+    // useAuthStore-оос user болон logout функцийг авч байна.
+    const { user, logout } = useAuthStore();
+    const isAuthChecked = user !== undefined; // Ensures state check is done
     const router = useRouter();
 
-    return (
-        // Outer container: sticky, elevated, clean background
-        <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
-            {/* Асуудлын эх үүсвэр болоогүй хэдий ч таны өгсөн class-ыг хадгалав */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
+    const handleLoginClick = () => {
+        router.push('/login');
+    };
+    
+  
 
+
+    return (
+        <header className="bg-white border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex justify-between items-center">
                 {/* 1. Logo and Main Navigation */}
                 <div className="flex items-center space-x-10">
                     {/* Logo Section */}
-                    <Link
-                        href="/"
+                    <NavLink
+                        href="/" // Using NavLink as mock for Link
                         className="flex cursor-pointer items-center text-gray-900 font-extrabold text-2xl tracking-tight"
                     >
                         <span className="text-indigo-600 mr-0.5">CURA</span>tors
-                    </Link>
-
+                    </NavLink>
                     {/* Navigation Links (Desktop) */}
                     <nav className="hidden md:flex items-center space-x-6">
-                        {/* NavLink-ийг одоо зөв ашиглаж байна */}
                         {
                             user?.type === 'organization' ? (
                                 <>
-                                    <NavLink href="/">Дашбоард</NavLink>
+                                    <NavLink href="/dashboard">Дашбоард</NavLink>
                                     <NavLink href="/trending">Трэнп контентууд</NavLink>
                                     <NavLink href="/ai-assistant">АI туслах</NavLink>
                                 </>
@@ -57,28 +78,42 @@ const Header = () => {
                                 </>
                             ) : null
                         }
-                        
                     </nav>
                 </div>
-
-                {/* 2. Actions (Login, Language, Menu) */}
+                {/* 2. Actions (Login, Logout, Language, Menu) */}
                 <div className="flex items-center space-x-3">
-
-                    {/* Login Button */}
+                    {/* Authentication Status / Action Buttons */}
                     {
                         isAuthChecked && user ? (
-                            <p >
-                                Сайн байна уу, {user.name}!
-                            </p>
-                        ) : <Button
-                            onClick={() => router.push('/login')}
-                            className="hidden sm:inline-flex bg-indigo-600 hover:bg-indigo-700 text-sm font-semibold h-9 px-4"
-                        >
-                            Нэвтрэх
-                        </Button>
+                            // Logged In: Show Greeting and Logout Button
+                            <div className="flex items-center space-x-3">
+                                <span className="hidden sm:inline text-sm font-medium text-gray-700">
+                                    Сайн байна уу, {user.name}!
+                                </span>
+                                <Button
+                                    onClick={logout} // Call the logout function (mocked)
+                                    variant="outline"
+                                    className="hidden sm:inline-flex text-sm font-semibold h-9 px-4 border-red-400 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors group"
+                                >
+                                    <LogOut className="h-4 w-4 mr-1 text-red-500 transition-transform group-hover:scale-110" />
+                                    Гарах
+                                </Button>
+                            </div>
+                        ) : (
+                            // Logged Out: Show Login Button
+                            <Button
+                                onClick={handleLoginClick} // This simulates routing to /login
+                                className="hidden sm:inline-flex bg-indigo-600 hover:bg-indigo-700 text-sm font-semibold h-9 px-4"
+                            >
+                                <LogIn className="h-4 w-4 mr-2" />
+                                Нэвтрэх
+                            </Button>
+                        )
                     }
-                    {/* Language Selector (using a standard button for consistency) */}
+
+                    {/* Language Selector */}
                     <Button
+                        onClick={() => {}} // Added empty handler to satisfy required prop
                         variant="outline"
                         size="sm"
                         className="hidden lg:flex items-center text-sm font-medium text-gray-600 border-gray-200 h-9 px-3"
@@ -86,9 +121,9 @@ const Header = () => {
                         <Globe className="h-4 w-4 mr-1 text-gray-500" />
                         <span>🇲🇳 MN</span>
                     </Button>
-
                     {/* Mobile Menu Button */}
                     <Button
+                     onClick={() => {}}
                         variant="ghost"
                         size="icon"
                         className="md:hidden"
