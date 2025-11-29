@@ -48,15 +48,6 @@ export const JobSearchSidebar: React.FC<JobSearchSidebarProps> = ({
                 />
             </div>
 
-            {/* Personalized Recommendations */}
-            <div className="border border-indigo-200 rounded-xl p-4 bg-indigo-50 flex items-center space-x-3 cursor-pointer hover:bg-indigo-100 transition">
-                <div className="w-8 h-8 flex items-center justify-center bg-indigo-600 rounded-full text-white font-bold">A</div>
-                <div className="text-sm">
-                    <p className="font-semibold text-gray-900">Надад тохирсон</p>
-                    <p className="text-xs text-gray-600">Хувийн зөвлөмжүүдийг харах</p>
-                </div>
-            </div>
-
             {/* Filter Sections */}
             <div className="space-y-6">
                 {MOCK_FILTERS.map((section) => (
