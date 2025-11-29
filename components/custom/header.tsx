@@ -1,51 +1,48 @@
 "use client";
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Menu, Globe, LogOut, LogIn } from 'lucide-react';
 import { Button } from '../ui/button';
+import Link from "next/link";
 import { useAuthStore } from '@/store/authStore';
+import { usePathname } from "next/navigation";
+import { cn } from "@/lib/utils"; // optional helper for class merging
+import { useRouter } from 'next/navigation';
 
-// This mock replaces 'next/link'
-// Note: Changed type definition to avoid TS errors in the mock environment
-type NavLinkProps = {
-    href: string;
-    children: React.ReactNode;
-    className?: string;
+interface NavLinkProps {
+  href: string;
+  className?: string;
+  children: React.ReactNode;
+}
+
+
+const NavLink: React.FC<NavLinkProps> = ({ href, className, children }) => {
+    const pathname: string = usePathname();
+    const active: boolean = pathname === href;
+
+    return (
+        <Link
+            href={href}
+            className={cn(
+                "transition-colors",
+                active ? "text-indigo-600 font-bold" : "text-gray-900",
+                className
+            )}
+        >
+            {children}
+        </Link>
+    );
 };
-
-const NavLink: React.FC<NavLinkProps> = ({ href, children, className }) => (
-    <a
-        href={href}
-        // Simulating Next.js Link behavior with anchor tag for demonstration
-        onClick={(e) => { e.preventDefault(); console.log(`Navigating to ${href}`); }}
-        className={className ?? "text-sm font-medium text-gray-600 hover:text-indigo-700 transition-colors cursor-pointer"}
-    >
-        {children}
-    </a>
-);
-
-// This mock replaces 'next/navigation' useRouter
-const useRouter = () => ({
-    push: (path: string) => {
-        // Simulating Next.js router push
-        console.log(`Routing to: ${path}`);
-        alert(`Simulating route push to: ${path}. Check console for details.`);
-    }
-});
-
-// This mock replaces '@/store/authStore'
 
 
 const Header = () => {
-    // useAuthStore-оос user болон logout функцийг авч байна.
     const { user, logout } = useAuthStore();
-    const isAuthChecked = user !== undefined; // Ensures state check is done
+    const isAuthChecked = user !== undefined; 
     const router = useRouter();
 
     const handleLoginClick = () => {
         router.push('/login');
     };
     
-  
 
 
     return (
@@ -65,7 +62,7 @@ const Header = () => {
                         {
                             user?.type === 'organization' ? (
                                 <>
-                                    <NavLink href="/dashboard">Дашбоард</NavLink>
+                                    <NavLink href="/organization">Дашбоард</NavLink>
                                     <NavLink href="/trending">Трэнп контентууд</NavLink>
                                     <NavLink href="/ai-assistant">АI туслах</NavLink>
                                 </>
@@ -73,7 +70,7 @@ const Header = () => {
                                 <>
                                     <NavLink href="/job-list">Ажлын зар</NavLink>
                                     <NavLink href="/trending">Трэнп контентууд</NavLink>
-                                    <NavLink href="/careers">Карьер зөвлөгөө</NavLink>
+                                    <NavLink href="/career-advice">Карьер зөвлөгөө</NavLink>
                                     <NavLink href="/ai-assistant">АI туслах</NavLink>
                                 </>
                             ) : null

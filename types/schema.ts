@@ -51,3 +51,26 @@ options: string[];
 type?: 'button' | 'tag';
 }
 
+
+
+export type AnalysisResult = {
+    contentTitle: string;
+    contentPlatform: string;
+    aiRoast: string;
+    keyMetrics: {
+        totalViews: string;
+        avgWatchTime: string;
+        saveRate: string;
+        conversionRate: string;
+    };
+    platformReach: {
+        name: string;
+        reach: number;
+        color: string;
+    }[];
+    targetAge: {
+        range: string;
+        engagement: number;
+        color: string;
+    }[];
+};

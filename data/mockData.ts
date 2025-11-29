@@ -198,3 +198,26 @@ export const users = [
     },
   },
 ];
+
+export const MOCK_AI_ANALYSIS = {
+    contentTitle: "Viral 15 Секундын Дуутай Бүжиг (TikTok)",
+    contentPlatform: "TikTok/Instagram Reels",
+    aiRoast: "Тунхаг: Энэхүү 15 секундын бичлэг нь TikTok-ын алгоритмыг хамгийн хямд аргаар хууран мэхэлж, 10-17 насны хүүхдүүдийн сэтгэлийг хөдөлгөж чадсан байна. Контентын чанар 2/10, Гэхдээ вирусын потенциал 10/10. Хэрэв таны зорилтот бүлэг 18-аас дээш бол энэ контентыг 'орхигдуулсан'. (Таны дараагийн контент яг ийм байх ёстой.)",
+    keyMetrics: {
+        totalViews: '7.1M',
+        avgWatchTime: '8.5 sec',
+        saveRate: '1.2%',
+        conversionRate: '0.01%' 
+    },
+    platformReach: [
+        { name: 'TikTok', reach: 80, color: 'bg-black' },
+        { name: 'Instagram Reels', reach: 15, color: 'bg-pink-600' },
+        { name: 'YouTube Shorts', reach: 5, color: 'bg-red-600' },
+    ],
+    targetAge: [
+        { range: '10-17', engagement: 60, color: 'bg-purple-500' },
+        { range: '18-24', engagement: 25, color: 'bg-indigo-500' },
+        { range: '25+', engagement: 15, color: 'bg-gray-500' },
+    ]
+};
+
