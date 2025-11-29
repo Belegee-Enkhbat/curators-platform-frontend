@@ -5,6 +5,8 @@ import { useAuthStore } from "@/store/authStore";
 import { UserType } from "@/types/enums";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+// import {Loader} from "@/components/ui/loader";
+import { Spinner } from "@/components/ui/spinner";
 
 export default function Home() {
     const router = useRouter();
@@ -22,7 +24,7 @@ export default function Home() {
     if (user === undefined || user) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-xl font-semibold text-indigo-600 animate-pulse">Ачаалж байна...</div>
+               <Spinner className="size-6" />
             </div>
         );
     }
@@ -32,10 +34,10 @@ export default function Home() {
         <div className="flex items-center justify-center min-h-screen bg-gray-50">
             <div className="text-center space-y-8 p-8 max-w-2xl">
                 <h1 className="text-5xl font-extrabold text-gray-900 leading-tight">
-                    <span className="text-indigo-600">CURATORS</span>: Хөгжүүлэлт, Хамтын Ажиллагааны Платформ
+                    <span className="text-indigo-600">CURATORS</span>: Development and Collaboration Platform
                 </h1>
                 <p className="text-xl text-gray-600">
-                    Шилдэг контент бүтээгчидтэй холбогдож, төслөө үр дүнтэй удирдах боломжийг нээгээрэй.
+                    Connect with top content creators and manage your projects effectively.
                 </p>
                 <Button
                     onClick={() => router.push('/login')}

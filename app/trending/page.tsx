@@ -14,7 +14,7 @@ const YOUR_NEWSDATA_API_KEY = "pub_11b19b9cc882463ba1b9b53218e9c042";
 
 // Static Data for SPECIFIC TREND Analytics (Mocking "Almas TV" virality)
 const MOCK_TREND_ANALYTICS = {
-    trendName: 'Almas TV-н Шинэ Дугаар (Viral)',
+    trendName: 'Almas TV',
     impressions: '12.8M', // Total views/impressions across platforms
     engagementRate: '7.2%', // Overall high engagement
     sentiment: {
@@ -63,36 +63,36 @@ const AnalyticsSection = () => (
     <div className="col-span-1 lg:col-span-2 space-y-8">
         <h2 className="text-3xl font-extrabold text-gray-900 flex items-center border-b pb-2">
             <BarChart2 className="w-6 h-6 mr-2 text-indigo-600" />
-            Трэндийн Нарийвчилсан Анализ: <span className="text-red-600 ml-2">{MOCK_TREND_ANALYTICS.trendName}</span>
+            Detailed Trend Analysis: <span className="text-red-600 ml-2">{MOCK_TREND_ANALYTICS.trendName}</span>
         </h2>
-        <p className="text-sm text-gray-600 -mt-6">Энэхүү контентын нийгмийн сүлжээн дэх тархалт, оролцооны мэдээлэл.</p>
+        <p className="text-sm text-gray-600 -mt-6">Social media reach and engagement details for this content.</p>
 
         {/* 1. Key Metrics Card */}
         <div className="grid md:grid-cols-4 gap-6">
             {/* Metric 1: Total Impressions */}
             <div className="bg-white p-5 rounded-xl shadow-lg border border-indigo-100 flex flex-col items-start">
                 <Users className="w-7 h-7 text-indigo-500 mb-3" />
-                <p className="text-sm font-medium text-gray-500">Нийт Үзэлт/Импрешн</p>
+                <p className="text-sm font-medium text-gray-500">Total Impressions</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">{MOCK_TREND_ANALYTICS.impressions}</p>
             </div>
             {/* Metric 2: Engagement Rate */}
             <div className="bg-white p-5 rounded-xl shadow-lg border border-green-100 flex flex-col items-start">
                 <Heart className="w-7 h-7 text-green-500 mb-3" />
-                <p className="text-sm font-medium text-gray-500">Дундаж Оролцоо (Engagement)</p>
+                <p className="text-sm font-medium text-gray-500">Average Engagement</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">{MOCK_TREND_ANALYTICS.engagementRate} <span className="text-sm font-normal text-green-500">↑ 0.9%</span></p>
             </div>
             {/* Metric 3: Shares/Reposts */}
             <div className="bg-white p-5 rounded-xl shadow-lg border border-yellow-100 flex flex-col items-start">
                 <Repeat2 className="w-7 h-7 text-yellow-500 mb-3" />
-                <p className="text-sm font-medium text-gray-500">Нийт Share/Repost</p>
+                <p className="text-sm font-medium text-gray-500">Total Shares/Reposts</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">450K</p>
             </div>
              {/* Metric 4: Sentiment Split */}
              <div className="bg-white p-5 rounded-xl shadow-lg border border-pink-100 flex flex-col items-start">
                 <MessageSquare className="w-7 h-7 text-pink-500 mb-3" />
-                <p className="text-sm font-medium text-gray-500">Сэтгэгдлийн Сентимент</p>
+                <p className="text-sm font-medium text-gray-500">Comments sentiment</p>
                 <p className="text-2xl font-bold text-gray-900 mt-1">
-                    {MOCK_TREND_ANALYTICS.sentiment.positive}% Эерэг
+                    {MOCK_TREND_ANALYTICS.sentiment.positive}% Positive
                 </p>
             </div>
         </div>
@@ -101,8 +101,8 @@ const AnalyticsSection = () => (
         <div className="grid lg:grid-cols-2 gap-6">
             {/* 2.1 Platform Reach Distribution */}
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-indigo-700 mb-4 flex items-center"><Globe className="w-5 h-5 mr-2"/> Платформын Тархалт</h3>
-                <p className="text-sm text-gray-500 mb-4">Тус контент аль платформууд дээр зонхилж байна.</p>
+                <h3 className="text-xl font-bold text-indigo-700 mb-4 flex items-center"><Globe className="w-5 h-5 mr-2"/> Platform Reach</h3>
+                <p className="text-sm text-gray-500 mb-4">This content&apos;s distribution across platforms.</p>
                 
                 <div className="space-y-3">
                     {MOCK_TREND_ANALYTICS.reachByPlatform.map((platform, index) => (
@@ -124,8 +124,8 @@ const AnalyticsSection = () => (
 
             {/* 2.2 Age Group Engagement */}
             <div className="bg-white p-6 rounded-xl shadow-lg border border-gray-100">
-                <h3 className="text-xl font-bold text-indigo-700 mb-4 flex items-center"><Users className="w-5 h-5 mr-2"/> Насны Бүлгийн Оролцоо</h3>
-                <p className="text-sm text-gray-500 mb-4">Хамгийн идэвхтэй оролцож буй насны ангилал.</p>
+                <h3 className="text-xl font-bold text-indigo-700 mb-4 flex items-center"><Users className="w-5 h-5 mr-2"/> Age Group Engagement</h3>
+                <p className="text-sm text-gray-500 mb-4">Most active age groups engaging with the content.</p>
                 
                 <div className="space-y-3">
                     {MOCK_TREND_ANALYTICS.ageGroupEngagement.map((item, index) => (
@@ -227,7 +227,7 @@ const TrendingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
             <h1 className="text-4xl font-extrabold text-gray-900 mb-8 flex items-center">
                 <TrendingUp className="w-8 h-8 mr-3 text-indigo-600" />
-                CURAtors Аналитик & Мэдээний Самбар
+                CURAtors Analytics & News Dashboard
             </h1>
 
             {/* 1. Analytics and Demographics Section: Now specific trend analysis */}
@@ -237,13 +237,13 @@ const TrendingPage = () => {
             <div className="mt-12">
                 <h2 className="text-3xl font-extrabold text-gray-900 flex items-center border-b pb-2 mb-6">
                     <Zap className="w-6 h-6 mr-2 text-indigo-600" />
-                    Бодит Цагийн Мэдээ (Newsdata.io-с)
+                    Real-time News (from Newsdata.io)
                 </h2>
                 
                 {loading && (
                     <div className="flex flex-col items-center h-48 bg-white rounded-xl shadow-lg justify-center">
                         <div className="animate-spin h-12 w-12 border-b-4 border-indigo-600 rounded-full mb-4"></div>
-                        <p className="text-indigo-600 font-medium">Мэдээлэл татаж байна...</p>
+                        <p className="text-indigo-600 font-medium">Loading data...</p>
                     </div>
                 )}
 
@@ -259,7 +259,7 @@ const TrendingPage = () => {
                         {/* Mongolia Trends */}
                         <div className="space-y-4">
                             <h3 className="text-xl font-bold text-indigo-700 flex items-center">
-                                🇲🇳 Монгол Улсын Трэнд
+                                🇲🇳 Mongolia Trends
                             </h3>
                             {mongoliaTrends.map((trend, index) => (
                                 <TrendCard key={index} trend={trend} />
@@ -269,7 +269,7 @@ const TrendingPage = () => {
                         {/* Global Trends */}
                         <div className="space-y-4">
                             <h3 className="text-xl font-bold text-gray-700 flex items-center">
-                                🌍 Дэлхийн Трэнд
+                                🌍 Global Trends
                             </h3>
                             {globalTrends.map((trend, index) => (
                                 <TrendCard key={index} trend={trend} />

@@ -66,7 +66,7 @@ export default function LoginPage() {
                         onClick={() => setType(UserType.Creator)}
                         className="flex-1 transition-all duration-200 h-10 shadow-sm"
                     >
-                        Контент Бүтээгч
+                        Content creator
                     </Button>
                     <Button
                         type="button"
@@ -74,7 +74,7 @@ export default function LoginPage() {
                         onClick={() => setType(UserType.Organization)}
                         className="flex-1 transition-all duration-200 h-10 shadow-sm"
                     >
-                        Байгууллага
+                        Organization
                     </Button>
                 </div>
 
@@ -103,14 +103,14 @@ export default function LoginPage() {
                     type="submit" 
                     className="w-full bg-indigo-600 hover:bg-indigo-700 h-11 text-lg font-semibold shadow-md"
                 >
-                    Нэвтрэх
+                    Login
                 </Button>
                 
                 {/* Static Credentials Hint */}
                 <div className="text-xs text-gray-500 text-center pt-2 border-t border-gray-100">
-                    <p className="font-semibold text-gray-600 mb-1">Туршилтын Нууц Үг:</p>
-                    <p>Байгууллага: <code className="font-mono text-indigo-500">orgpass</code> <span className="text-gray-400">|</span> Бүтээгч: <code className="font-mono text-indigo-500">creatorpass</code></p>
-                    <p className="mt-1 text-xs text-gray-400">Амжилттай нэвтэрвэл <span className="font-medium text-indigo-500">{successRedirectPath}</span> руу үсэрнэ.</p>
+                    <p className="font-semibold text-gray-600 mb-1">Test Passwords:</p>
+                    <p>Organization: <code className="font-mono text-indigo-500">orgpass</code> <span className="text-gray-400">|</span> Content creator: <code className="font-mono text-indigo-500">creatorpass</code></p>
+                    <p className="mt-1 text-xs text-gray-400">Upon successful login, you will be redirected to <span className="font-medium text-indigo-500">{successRedirectPath}</span>.</p>
                 </div>
             </form>
         </div>

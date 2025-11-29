@@ -66,18 +66,18 @@ const Header = () => {
                         {
                             user?.type === 'organization' ? (
                                 <>
-                                    <NavLink href="/org-dashboard">Дашбоард</NavLink>
-                                    <NavLink href="/active-creator">Идэвхтэй контент бүтээгч</NavLink>
-                                    <NavLink href="/trending">Трэнп контентууд</NavLink>
-                                    <NavLink href="/ai-assistant">АI туслах</NavLink>
+                                    <NavLink href="/org-dashboard">Dashboard</NavLink>
+                                    <NavLink href="/active-creator">Active Creators</NavLink>
+                                    <NavLink href="/trending">Trending Content</NavLink>
+                                    <NavLink href="/ai-assistant">AI Assistant</NavLink>
                                 </>
                             ) : user?.type === 'creator' ? (
                                 <>
-                                    <NavLink href="/user-dashboard">Дашбоард</NavLink>
-                                    <NavLink href="/job-list">Ажлын зар</NavLink>
-                                    <NavLink href="/trending">Трэнп контентууд</NavLink>
-                                    <NavLink href="/career-advice">Карьер зөвлөгөө</NavLink>
-                                    <NavLink href="/ai-assistant">АI туслах</NavLink>
+                                    <NavLink href="/user-dashboard">Dashboard</NavLink>
+                                    <NavLink href="/job-list">Job Listings</NavLink>
+                                    <NavLink href="/trending">Trending Content</NavLink>
+                                    <NavLink href="/career-advice">Career Advice</NavLink>
+                                    <NavLink href="/ai-assistant">AI Assistant</NavLink>
                                 </>
                             ) : null
                         }
@@ -91,7 +91,7 @@ const Header = () => {
                             // Logged In: Show Greeting and Logout Button
                             <div className="flex items-center space-x-3">
                                 <span className="hidden sm:inline text-sm font-medium text-gray-700">
-                                    Сайн байна уу, {user.name}!
+                                    Hello, {user.name}!
                                 </span>
                                 <Button
                                     onClick={handleLogout} // Call the logout function (mocked)
@@ -99,7 +99,7 @@ const Header = () => {
                                     className="hidden sm:inline-flex text-sm font-semibold h-9 px-4 border-red-400 text-red-600 hover:bg-red-50 hover:text-red-700 transition-colors group"
                                 >
                                     <LogOut className="h-4 w-4 mr-1 text-red-500 transition-transform group-hover:scale-110" />
-                                    Гарах
+                                    Logout
                                 </Button>
                             </div>
                         ) : (
@@ -109,21 +109,11 @@ const Header = () => {
                                 className="hidden sm:inline-flex bg-indigo-600 hover:bg-indigo-700 text-sm font-semibold h-9 px-4"
                             >
                                 <LogIn className="h-4 w-4 mr-2" />
-                                Нэвтрэх
+                                Login
                             </Button>
                         )
                     }
 
-                    {/* Language Selector */}
-                    <Button
-                        onClick={() => {}} // Added empty handler to satisfy required prop
-                        variant="outline"
-                        size="sm"
-                        className="hidden lg:flex items-center text-sm font-medium text-gray-600 border-gray-200 h-9 px-3"
-                    >
-                        <Globe className="h-4 w-4 mr-1 text-gray-500" />
-                        <span>🇲🇳 MN</span>
-                    </Button>
                     {/* Mobile Menu Button */}
                     <Button
                      onClick={() => {}}

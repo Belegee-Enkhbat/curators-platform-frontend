@@ -27,203 +27,203 @@ type CreatorApplicant = {
 const MOCK_CREATORS: Creator[] = [
   {
     id: 'c1',
-    name: 'Ану Бат',
+    name: 'Anu Bat',
     avatarUrl: 'https://randomuser.me/api/portraits/women/44.jpg',
-    bio: 'Богино хэлбэрийн видео болон вирусын кампанит ажилд мэргэшсэн контент бүтээгч. Ивээн тэтгэлэг болон хамтын ажиллагаанд нээлттэй.',
-    skills: ['Видео Эдит', 'TikTok', 'Өгүүлэл'],
-    tags: ['Тренд', 'Вирал', 'Богино'],
+    bio: 'Content creator specializing in short-form videos and viral campaigns. Open to sponsorships and collaborations.',
+    skills: ['Video Editing', 'TikTok', 'Writing'],
+    tags: ['Trending', 'Viral', 'Short-form'],
     applicants: [
       {
         id: 'a1',
-        name: 'Монгол Зарнаа ХХК',
+        name: 'Mongol Zarnaa LLC',
         avatarUrl: 'https://randomuser.me/api/portraits/men/32.jpg',
         type: 'Sponsor',
-        message: 'Бид таны дараагийн TikTok цувралыг ивээн тэтгэхийг хүсэж байна!',
+        message: 'We would like to sponsor your next TikTok series!',
         appliedAt: '2024-06-10 10:00',
       },
       {
         id: 'a2',
-        name: 'Сара Т.',
+        name: 'Sara T.',
         avatarUrl: 'https://randomuser.me/api/portraits/women/65.jpg',
         type: 'Collab',
-        message: 'Хамтдаа дахин нэг вирал дуэт хийцгээе!',
+        message: 'Let’s create another viral duet together!',
         appliedAt: '2024-06-10 11:30',
       },
     ],
   },
   {
     id: 'c2',
-    name: 'Батаа Ган',
+    name: 'Bataa Gan',
     avatarUrl: 'https://randomuser.me/api/portraits/men/45.jpg',
-    bio: 'Мэдээллийн график дизайнер ба контент бичигч. Хамтран ажиллах брэндүүдийг хайж байна.',
-    skills: ['Инфографик', 'Контент Бичих', 'Брэндинг'],
-    tags: ['Дизайн', 'Бичих', 'Брэнд'],
+    bio: 'Information graphic designer and content writer. Looking for brands to collaborate with.',
+    skills: ['Infographic', 'Content Writing', 'Branding'],
+    tags: ['Design', 'Writing', 'Brand'],
     applicants: [
       {
         id: 'a3',
-        name: 'Эко Брэнд',
+        name: 'Eco Brand',
         avatarUrl: 'https://randomuser.me/api/portraits/men/46.jpg',
         type: 'Sponsor',
-        message: 'Таны дараагийн инфографик цувралыг ивээн тэтгэх сонирхолтой байна.',
+        message: 'Interested in sponsoring your next infographic series.',
         appliedAt: '2024-06-09 09:15',
       },
     ],
   },
   {
     id: 'c3',
-    name: 'Энхээ Наран',
+    name: 'Enkhee Naran',
     avatarUrl: 'https://randomuser.me/api/portraits/women/50.jpg',
-    bio: 'Технологийн чиглэлийн YouTube суваг хөтлөгч. Шинэ бүтээгдэхүүний тойм болон туршилт хийх дуртай.',
-    skills: ['YouTube', 'Тойм Бичих', 'Видео Продакшн'],
-    tags: ['Технологи', 'Гаджет', 'Урт Формат'],
+    bio: 'Tech-focused YouTube channel host. Loves reviewing and testing new products.',
+    skills: ['YouTube', 'Review Writing', 'Video Production'],
+    tags: ['Technology', 'Gadgets', 'Long-form'],
     applicants: [
       {
         id: 'a4',
         name: 'iTech Solutions',
         avatarUrl: 'https://randomuser.me/api/portraits/men/50.jpg',
         type: 'Sponsor',
-        message: 'Бидний ухаалаг цагны тоймыг хийх саналтай байна.',
+        message: 'We’d like to collaborate on a smart watch review.',
         appliedAt: '2024-06-11 14:00',
       },
     ],
   },
   {
     id: 'c4',
-    name: 'Дорж Баяр',
+    name: 'Dorj Bayar',
     avatarUrl: 'https://randomuser.me/api/portraits/men/12.jpg',
-    bio: 'Зураг, гэрэл зургийн мэргэжилтэн. Аялал, байгалийн гэрэл зургийн контент үүсгэдэг.',
-    skills: ['Гэрэл Зураг', 'Adobe Lightroom', 'Аялал'],
-    tags: ['Аялал', 'Байгаль', 'Зураг'],
+    bio: 'Photography expert. Creates travel and nature photography content.',
+    skills: ['Photography', 'Adobe Lightroom', 'Travel'],
+    tags: ['Travel', 'Nature', 'Photography'],
     applicants: [
       {
         id: 'a5',
-        name: 'Аялал жуулчлалын агентлаг',
+        name: 'Travel Agency',
         avatarUrl: 'https://randomuser.me/api/portraits/women/10.jpg',
         type: 'Collab',
-        message: 'Говьд хамтарсан фото аялал зохион байгуулъя.',
+        message: 'Let’s organize a joint photo tour in the Gobi desert.',
         appliedAt: '2024-06-10 16:45',
       },
       {
         id: 'a6',
-        name: 'Мөнх-Эрдэнэ',
+        name: 'Munkh-Erdene',
         avatarUrl: 'https://randomuser.me/api/portraits/men/15.jpg',
         type: 'Message',
-        message: 'Таны зургийн техникийн талаар асуух зүйл байна.',
+        message: 'I have a question about your photography techniques.',
         appliedAt: '2024-06-11 08:30',
       },
     ],
   },
   {
     id: 'c5',
-    name: 'Ганхүү Ханд',
+    name: 'Gankhuu Khand',
     avatarUrl: 'https://randomuser.me/api/portraits/women/71.jpg',
-    bio: 'Хоол хийх, эрүүл мэндийн чиглэлээр контент үүсгэдэг. Эерэг хандлага түгээгч.',
-    skills: ['Хоолны Блог', 'Рецепт Бичих', 'Фото зураг (Хоол)'],
-    tags: ['Хоол', 'Эрүүл Мэнд', 'Амьдралын Хэв Маяг'],
+    bio: 'Creates content around cooking and health. Promotes a positive lifestyle.',
+    skills: ['Food Blogging', 'Recipe Writing', 'Food Photography'],
+    tags: ['Food', 'Health', 'Lifestyle'],
     applicants: [
       {
         id: 'a7',
-        name: 'Органик Хүнс',
+        name: 'Organic Food',
         avatarUrl: 'https://randomuser.me/api/portraits/men/77.jpg',
         type: 'Sponsor',
-        message: 'Манай органик бүтээгдэхүүнээр амттай хоол хийхийг санал болгож байна.',
+        message: 'We’d like to propose cooking with our organic products.',
         appliedAt: '2024-06-08 11:00',
       },
     ],
   },
   {
     id: 'c6',
-    name: 'Хүрэлбаатар',
+    name: 'Khurelbaatar',
     avatarUrl: 'https://randomuser.me/api/portraits/men/82.jpg',
-    bio: 'Фитнесс, дасгал хөдөлгөөний талаарх богино хэмжээний бичлэгүүд болон хичээлүүд бэлтгэдэг.',
-    skills: ['Дасгалжуулалт', 'Видео Монтаж', 'Сошиал Медиа'],
-    tags: ['Фитнесс', 'Дасгал', 'Эрч хүч'],
+    bio: 'Creates short fitness videos and training sessions.',
+    skills: ['Coaching', 'Video Editing', 'Social Media'],
+    tags: ['Fitness', 'Exercise', 'Energy'],
     applicants: [
       {
         id: 'a8',
         name: 'Gym Equipment MGL',
         avatarUrl: 'https://randomuser.me/api/portraits/women/88.jpg',
         type: 'Sponsor',
-        message: 'Таны дасгалын бичлэгүүдэд манай тоног төхөөрөмжийг ашиглах санал.',
+        message: 'Proposal to use our equipment in your workout videos.',
         appliedAt: '2024-06-12 10:30',
       },
       {
         id: 'a9',
-        name: 'Түвшин-Эрдэнэ',
+        name: 'Tuvshin-Erdene',
         avatarUrl: 'https://randomuser.me/api/portraits/men/90.jpg',
         type: 'Collab',
-        message: 'Бид хоёр өөр төрлийн дасгалын дуэтийг хийж болох юм.',
+        message: 'We could do a duet with two different types of workouts.',
         appliedAt: '2024-06-12 11:00',
       },
     ],
   },
   {
     id: 'c7',
-    name: 'Идэр Оюун',
+    name: 'Ider Oyoon',
     avatarUrl: 'https://randomuser.me/api/portraits/women/22.jpg',
-    bio: 'Боловсрол, карьер хөгжлийн чиглэлээр подкаст болон нийтлэл бэлтгэдэг.',
-    skills: ['Подкаст', 'Контент Бичих', 'Мэдээлэл Шинжилгээ'],
-    tags: ['Боловсрол', 'Карьер', 'Подкаст'],
+    bio: 'Creates podcasts and articles on education and career development.',
+    skills: ['Podcast', 'Content Writing', 'Research'],
+    tags: ['Education', 'Career', 'Podcast'],
     applicants: [
       {
         id: 'a10',
-        name: 'Манлай Академи',
+        name: 'Manlai Academy',
         avatarUrl: 'https://randomuser.me/api/portraits/men/20.jpg',
         type: 'Sponsor',
-        message: 'Манай сургалтын хөтөлбөрийг танилцуулахыг хүсэж байна.',
+        message: 'We’d like to feature our training program.',
         appliedAt: '2024-06-13 15:00',
       },
     ],
   },
   {
     id: 'c8',
-    name: 'Жаргал Сайхан',
+    name: 'Jargal Saikhan',
     avatarUrl: 'https://randomuser.me/api/portraits/men/33.jpg',
-    bio: 'Санхүү, хөрөнгө оруулалтын талаар ойлгоход хялбар инфографик болон богино бичлэгүүд хийдэг.',
-    skills: ['Санхүү', 'Инфографик', 'Мэдээлэл Шинжилгээ'],
-    tags: ['Санхүү', 'Хөрөнгө Оруулалт', 'Боловсрол'],
-    applicants: [], // No current applicants
+    bio: 'Makes easy-to-understand infographics and short videos about finance and investing.',
+    skills: ['Finance', 'Infographic', 'Research'],
+    tags: ['Finance', 'Investment', 'Education'],
+    applicants: [],
   },
   {
     id: 'c9',
-    name: 'Оргил Түвшин',
+    name: 'Orgil Tuvshin',
     avatarUrl: 'https://randomuser.me/api/portraits/men/55.jpg',
-    bio: 'Онлайн тоглоом болон стриминг контент үүсгэгч. Идэвхтэй фэнүүдийн баазтай.',
-    skills: ['Стриминг', 'Тоглоомын Тойм', 'Видео Эдит'],
-    tags: ['Тоглоом', 'Стример', 'Twitch'],
+    bio: 'Online gaming and streaming content creator. Has an active fanbase.',
+    skills: ['Streaming', 'Game Review', 'Video Editing'],
+    tags: ['Gaming', 'Streamer', 'Twitch'],
     applicants: [
       {
         id: 'a11',
         name: 'Game Zone Mongolia',
         avatarUrl: 'https://randomuser.me/api/portraits/women/5.jpg',
         type: 'Sponsor',
-        message: 'Манай тоглоомын аксесуаруудыг сурталчлах санал.',
+        message: 'Proposal to promote our gaming accessories.',
         appliedAt: '2024-06-14 19:30',
       },
     ],
   },
   {
     id: 'c10',
-    name: 'Пүрэвсүрэн',
+    name: 'Purevsuren',
     avatarUrl: 'https://randomuser.me/api/portraits/women/18.jpg',
-    bio: 'Урлаг, гар урлалын чиглэлээр DIY (өөрийн гараар хийх) контент бэлтгэдэг. Инстаграм болон Pinterest-д идэвхтэй.',
-    skills: ['Гар Урлал', 'Зураг Зурах', 'Инстаграм'],
-    tags: ['Урлаг', 'DIY', 'Гар Урлал'],
+    bio: 'Creates DIY content for arts and crafts. Active on Instagram and Pinterest.',
+    skills: ['Crafts', 'Drawing', 'Instagram'],
+    tags: ['Art', 'DIY', 'Handmade'],
     applicants: [
       {
         id: 'a12',
-        name: 'Крафт Дэлгүүр',
+        name: 'Craft Store',
         avatarUrl: 'https://randomuser.me/api/portraits/men/19.jpg',
         type: 'Collab',
-        message: 'Бидний материалыг ашиглан хамтарсан бичлэг хийхийг хүсэж байна.',
+        message: 'We’d like to create a collaborative video using our materials.',
         appliedAt: '2024-06-15 09:00',
       },
       {
         id: 'a13',
-        name: 'Монгол Оёдол',
+        name: 'Mongol Sewing',
         avatarUrl: 'https://randomuser.me/api/portraits/women/19.jpg',
         type: 'Message',
-        message: 'Таны шинэ бүтээлийн зургийг илгээгээч.',
+        message: 'Please send a photo of your new creation.',
         appliedAt: '2024-06-15 10:45',
       },
     ],
@@ -294,19 +294,19 @@ const CreatorCard: React.FC<{ creator: Creator; expanded: boolean; onToggle: () 
           onClick={onToggle}
         >
           {expanded
-            ? 'Сэтгэгдэл Нуух' // Hide Applicants
-            : `Сэтгэгдэл Үзэх (${creator.applicants.length})`} {/* View Applicants */}
+            ? 'Hide comments' // Hide Applicants
+            : `View comments (${creator.applicants.length})`} {/* View Applicants */}
         </button>
         <div className="text-sm text-gray-500">
-          <span className="font-bold text-gray-800">{creator.applicants.length}</span> Сэтгэгдэл
+          <span className="font-bold text-gray-800">{creator.applicants.length}</span> Comments
         </div>
       </div>
     </div>
     {expanded && (
       <div className="mt-6 border-t pt-4 space-y-4">
-        <h4 className="font-semibold text-gray-800 mb-2 text-lg">Ирсэн Сэтгэгдэлүүд</h4> {/* Applicants */}
+        <h4 className="font-semibold text-gray-800 mb-2 text-lg">Received Comments</h4> {/* Applicants */}
         {creator.applicants.length === 0 ? (
-          <div className="text-gray-500 text-sm">Одоогоор Сэтгэгдэл ирээгүй байна.</div>
+          <div className="text-gray-500 text-sm">No comments received yet.</div>
         ) : (
           creator.applicants.map((applicant) => (
             <CreatorApplicantCard key={applicant.id} applicant={applicant} />
@@ -370,7 +370,7 @@ export default function ActiveContentCreator() {
           {/* Right Column - Creator List (3/4 width) */}
           <div className="lg:col-span-3">
             <h2 className="text-xl font-bold mb-6 text-gray-800">
-              Идэвхтэй Контент Бүтээгчид 
+              Active Content Creators
             </h2>
             
             <div className="space-y-6">
@@ -388,7 +388,7 @@ export default function ActiveContentCreator() {
             
             {MOCK_CREATORS.length === 0 && (
                 <div className="text-gray-500 text-center py-10 bg-white rounded-xl shadow-lg">
-                    Одоогоор идэвхтэй контент бүтээгч олдсонгүй.
+                    No active content creators found at the moment.
                 </div>
             )}
           </div>

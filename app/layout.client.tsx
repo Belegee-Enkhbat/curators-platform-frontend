@@ -58,7 +58,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
     if (!isAuthChecked) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-xl font-semibold text-indigo-600 animate-pulse">Төлөвийг шалгаж байна...</div>
+                <div className="text-xl font-semibold text-indigo-600 animate-pulse">Checking status...</div>
             </div>
         );
     }
@@ -69,7 +69,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
         // Redirection логик useEffect дотор ажиллаж байгаа тул энд зөвхөн хүлээлгийн UI үзүүлнэ.
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-gray-500">Нэвтрэх хуудас руу шилжиж байна...</div>
+                <div className="text-gray-500">Redirecting to login page...</div>
             </div>
         );
     }

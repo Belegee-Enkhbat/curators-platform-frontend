@@ -12,46 +12,46 @@ interface AdviceItem {
 const careerAdvice: AdviceItem[] = [
   {
     icon: <Lightbulb className="w-6 h-6 text-indigo-600" />,
-    title: "Өөрийн контентын чиглэлийг тодорхойл",
+    title: "Define Your Content Niche",
     description:
-      "Контент бүтээгч болохын тулд эхлээд өөрийн niche буюу чиглэлээ тодорхойл. Жишээ нь: видео блог, подкаст, график дизайн, эсвэл бичлэг хийх.",
+      "To become a content creator, first define your niche. For example: video blogging, podcasting, graphic design, or writing.",
   },
   {
     icon: <PenTool className="w-6 h-6 text-indigo-600" />,
-    title: "Чанартай контент бүтээх",
+    title: "Create High-Quality Content",
     description:
-      "Үзэгчдэд үнэ цэнэ өгөх, мэдээлэл өгч, хөгжөөнтөөр, эсвэл мэдлэг өгдөг контентыг бүтээх нь хамгийн чухал.",
+      "Focus on producing content that provides value to your audience—educational, entertaining, or informative.",
   },
   {
     icon: <Users className="w-6 h-6 text-indigo-600" />,
-    title: "Нийгмийн сүлжээг ашиглах",
+    title: "Leverage Social Media",
     description:
-      "Instagram, TikTok, YouTube гэх мэт платформ дээр идэвхтэй оролцож, үзэгчидтэйгээ харилцах нь таны брэндийг өсгөдөг.",
+      "Be active on platforms like Instagram, TikTok, and YouTube, and engage with your audience to grow your brand.",
   },
   {
     icon: <Camera className="w-6 h-6 text-indigo-600" />,
-    title: "Видео болон зураг засварлах ур чадвар эзэмших",
+    title: "Master Video and Photo Editing",
     description:
-      "Adobe Premiere, Final Cut Pro, Canva зэрэг хэрэгслээр контентоо мэргэжлийн түвшинд засварлах нь үзэгчдэд таалагдана.",
+      "Use tools like Adobe Premiere, Final Cut Pro, or Canva to professionally edit your content and appeal to viewers.",
   },
   {
     icon: <Lightbulb className="w-6 h-6 text-indigo-600" />,
-    title: "Шинэ санааг байнга судлах",
+    title: "Continuously Explore New Ideas",
     description:
-      "Контентын чиг хандлагыг судалж, трэндийг дагах, шинэлэг санааг туршиж үзэх нь амжилтын түлхүүр.",
+      "Study content trends, follow viral patterns, and experiment with new ideas to stay ahead and achieve success.",
   },
 ];
+
 
 const CareerAdvicePage = () => {
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <h1 className="text-4xl font-extrabold text-gray-900 mb-8">
-        Контент бүтээгчдэд зориулсан Карьер Зөвлөгөө
+        Career Advice for Content Creators
       </h1>
 
-      <p className="text-gray-700 mb-10">
-        Контент бүтээгч болох нь зөвхөн бүтээлч байхаас гадна зөв стратеги, ур чадвар шаарддаг.
-        Доорх зөвлөгөөг мөрдвөл та илүү үр дүнтэй, амжилттай контент бүтээгч болох боломжтой.
+        <p className="text-gray-700 mb-10">
+        Here are some essential tips to help you thrive as a content creator in today&apos;s digital landscape.
       </p>
 
       <div className="grid gap-8 sm:grid-cols-2">

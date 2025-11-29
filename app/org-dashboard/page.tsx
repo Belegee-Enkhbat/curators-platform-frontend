@@ -30,70 +30,69 @@ type Applicant = {
   skills: string[];
   avatarUrl?: string;
 };
-
 const MOCK_JOBS: Job[] = [
   {
     id: "j1",
-    title: "Контент Бичигч (Нэг удаагийн төсөл)",
-    description: "Маркетингийн кампанит ажилд зориулж сонирхолтой нийтлэл, сошиал медиа контент бичих.",
-    requirements: ["Сайн бичих чадвар", "SEO мэдлэг", "Креатив сэтгэлгээ"],
-    location: "Зайнаас", // Remote
-    jobType: "Гэрээт", // Contract
+    title: "Content Writer (One-time Project)",
+    description: "Write engaging articles and social media content for a marketing campaign.",
+    requirements: ["Good writing skills", "SEO knowledge", "Creative mindset"],
+    location: "Remote",
+    jobType: "Contract",
     salaryMin: "1.5M",
     salaryMax: "2M",
     companyId: "c1",
     applicants: 2,
-    postedAgo: "2 цагийн өмнө", // 2 hours ago
-    tags: ["Шинэ", "Зайнаас", "Нэг удаагийн"],
+    postedAgo: "2 hours ago",
+    tags: ["New", "Remote", "One-time"],
   },
   {
     id: "j2",
-    title: "Сошиал Медиа Контент Бүтээгч",
-    description: "Instagram, Facebook, TikTok-т нийтлэл үүсгэх, хуваарь гаргах.",
-    requirements: ["Сошиал медиа мэдлэг", "График дизайны ур чадвар", "Креатив"],
-    location: "Зайнаас", // Remote
-    jobType: "Гэрээт", // Contract
+    title: "Social Media Content Creator",
+    description: "Create and schedule posts for Instagram, Facebook, and TikTok.",
+    requirements: ["Social media knowledge", "Graphic design skills", "Creative mindset"],
+    location: "Remote",
+    jobType: "Contract",
     salaryMin: "2M",
     salaryMax: "2.5M",
     companyId: "c1",
     applicants: 1,
-    postedAgo: "5 цагийн өмнө", // 5 hours ago
-    tags: ["Тренд", "Нэг удаагийн"],
+    postedAgo: "5 hours ago",
+    tags: ["Trending", "One-time"],
   },
 ];
 
 const MOCK_APPLICANTS: Applicant[] = [
   {
     id: "a1",
-    name: "Ану Бат",
+    name: "Anu Bat",
     email: "anu.bat@email.com",
     phone: "99112233",
     appliedAt: "2024-06-10 10:00",
     jobId: "j1",
-    coverLetter: "Би контент бичих ур чадвартай бөгөөд дижитал маркетингийн чиглэлээр 3 жилийн туршлагатай.",
-    skills: ["Контент Бичих", "SEO", "Креатив"],
+    coverLetter: "I have strong content writing skills and 3 years of experience in digital marketing.",
+    skills: ["Content Writing", "SEO", "Creative"],
     avatarUrl: "https://randomuser.me/api/portraits/women/44.jpg",
   },
   {
     id: "a2",
-    name: "Батаа Ган",
+    name: "Bataa Gan",
     email: "bataa.gan@email.com",
     phone: "88113344",
     appliedAt: "2024-06-10 11:30",
     jobId: "j1",
-    coverLetter: "Би сошиал медиа болон контент бүтээх чиглэлээр сайн суурь мэдлэгтэй.",
-    skills: ["Сошиал Медиа", "Копирайт"],
+    coverLetter: "I have a solid background in social media and content creation.",
+    skills: ["Social Media", "Copywriting"],
     avatarUrl: "https://randomuser.me/api/portraits/men/32.jpg",
   },
   {
     id: "a3",
-    name: "Сара Т.",
+    name: "Sara T.",
     email: "sara.t@email.com",
     phone: "99001122",
     appliedAt: "2024-06-10 09:15",
     jobId: "j2",
-    coverLetter: "TikTok болон Instagram-д вирусын чанартай контент бүтээх туршлагатай.",
-    skills: ["TikTok", "Instagram", "Видео Эдит"],
+    coverLetter: "Experienced in creating viral content for TikTok and Instagram.",
+    skills: ["TikTok", "Instagram", "Video Editing"],
     avatarUrl: "https://randomuser.me/api/portraits/women/65.jpg",
   },
 ];
@@ -151,7 +150,7 @@ const ApplicantCard: React.FC<{ applicant: Applicant }> = ({ applicant }) => (
     <div className="flex-1">
       <div className="flex items-center gap-2">
         <span className="font-bold text-gray-900">{applicant.name}</span>
-        <span className="text-xs text-gray-400">| Ирүүлсэн: {applicant.appliedAt.split(' ')[0]}</span>
+        <span className="text-xs text-gray-400">| Applied: {applicant.appliedAt.split(' ')[0]}</span>
       </div>
       <div className="text-xs text-gray-500 mt-1">
         <span className="text-indigo-600">{applicant.email}</span> | {applicant.phone}
@@ -159,11 +158,11 @@ const ApplicantCard: React.FC<{ applicant: Applicant }> = ({ applicant }) => (
       
       {/* Cover Letter styling similar to Applicant message */}
       <div className="mt-3 text-sm text-gray-700 italic border-l-2 border-indigo-200 pl-3">
-        &quot;Бичиг: {applicant.coverLetter}&quot;
+        &quot;Cover Letter: {applicant.coverLetter}&quot;
       </div>
       
       <div className="flex flex-wrap gap-2 mt-3 pt-2 border-t border-gray-100">
-        <span className="text-xs font-semibold text-gray-700">Ур чадвар:</span>
+        <span className="text-xs font-semibold text-gray-700">Skills:</span>
         {applicant.skills.map(skill => (
           <span key={skill} className="bg-green-50 text-green-700 px-3 py-1 rounded-lg text-xs font-medium">{skill}</span>
         ))}
@@ -171,7 +170,7 @@ const ApplicantCard: React.FC<{ applicant: Applicant }> = ({ applicant }) => (
     </div>
     <div>
       <button className="bg-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-indigo-600 shadow-md transition">
-        Анкет харах
+        See Profile
       </button>
     </div>
   </div>
@@ -191,13 +190,13 @@ const OrganizationDashboardPage: React.FC = () => {
         
 
         <h2 className="text-2xl font-bold mb-6 text-gray-800">
-          Нийтэлсэн Ажлын Зарууд ({MOCK_JOBS.length})
+          Posted Jobs ({MOCK_JOBS.length})
         </h2>
         
         <div className="space-y-8">
           {MOCK_JOBS.length === 0 && (
             <div className="text-gray-500 text-center py-10 bg-white rounded-xl shadow-lg">
-                Одоогоор зар нийтлээгүй байна.
+                No jobs posted yet.
             </div>
           )}
           {MOCK_JOBS.map((job) => {
@@ -214,19 +213,19 @@ const OrganizationDashboardPage: React.FC = () => {
                       }
                     >
                       {expandedJobId === job.id
-                        ? 'Анкет Нуух'
-                        : `Анкет Үзэх (${applicantsCount})`} 
+                        ? 'Hide Applications'
+                        : `View Applications (${applicantsCount})`} 
                     </button>
                     <div className="text-sm text-gray-500">
-                      <span className="font-bold text-gray-800">{applicantsCount}</span> Анкет
+                      <span className="font-bold text-gray-800">{applicantsCount}</span> Applications
                     </div>
                   </div>
                 </div>
                 {expandedJobId === job.id && (
                   <div className="mt-6 border-t pt-4 space-y-4">
-                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Ирсэн Анкетнууд</h4>
+                    <h4 className="font-semibold text-gray-800 mb-2 text-lg">Received Applications</h4>
                     {applicantsCount === 0 ? (
-                      <div className="text-gray-500 text-sm">Одоогоор анкет ирээгүй байна.</div>
+                      <div className="text-gray-500 text-sm">No applications received yet.</div>
                     ) : (
                       getApplicantsForJob(job.id).map((applicant) => (
                         <ApplicantCard key={applicant.id} applicant={applicant} />
