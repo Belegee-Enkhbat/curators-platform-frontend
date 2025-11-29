@@ -5,6 +5,7 @@ import { useAuthStore } from '@/store/authStore';
 import { UserType } from '@/types/enums';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import { Spinner } from '@/components/ui/spinner';
 
 export default function LoginPage() {
     const router = useRouter();
@@ -29,7 +30,7 @@ export default function LoginPage() {
     if (user) {
         return (
             <div className="flex items-center justify-center min-h-screen bg-gray-50">
-                <div className="text-lg font-semibold text-indigo-600">Redirecting...</div>
+                <div className="text-lg font-semibold text-indigo-600">  <Spinner className="size-6" /></div>
             </div>
         );
     }
